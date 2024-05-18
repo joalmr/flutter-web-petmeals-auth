@@ -58,8 +58,8 @@ class DeleteOAuth extends StatelessWidget {
                         actions: [
                           TextButton(
                             style: const ButtonStyle(
-                                foregroundColor: MaterialStatePropertyAll(
-                                    Color(0xFFe84a5f))),
+                                foregroundColor:
+                                    WidgetStatePropertyAll(Color(0xFFe84a5f))),
                             onPressed: () {
                               AuthApp().deleteUserAuth().then(
                                     (value) => Navigator.pushReplacement(
@@ -82,9 +82,9 @@ class DeleteOAuth extends StatelessWidget {
                   );
                 },
                 style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(Color(0xFFe84a5f)),
-                  foregroundColor: MaterialStatePropertyAll(Colors.white),
-                  shape: MaterialStatePropertyAll(
+                  backgroundColor: WidgetStatePropertyAll(Color(0xFFe84a5f)),
+                  foregroundColor: WidgetStatePropertyAll(Colors.white),
+                  shape: WidgetStatePropertyAll(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8)),
                     ),

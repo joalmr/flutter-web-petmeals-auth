@@ -52,9 +52,9 @@ class HomePage extends StatelessWidget {
                       );
                 },
                 style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(Color(0xFF7fa3cc)),
-                  foregroundColor: MaterialStatePropertyAll(Colors.white),
-                  shape: MaterialStatePropertyAll(
+                  backgroundColor: WidgetStatePropertyAll(Color(0xFF7fa3cc)),
+                  foregroundColor: WidgetStatePropertyAll(Colors.white),
+                  shape: WidgetStatePropertyAll(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8)),
                     ),

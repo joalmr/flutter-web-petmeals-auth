@@ -1,11 +1,12 @@
 import 'dart:async';
+import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthApp {
   Future<UserCredential?> signInGoogle() async {
     try {
-      print('**signInGoogle**');
+      log('**signInGoogle**');
       GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
       GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
 
@@ -16,7 +17,7 @@ class AuthApp {
 
       return await FirebaseAuth.instance.signInWithCredential(credential);
     } catch (e) {
-      print("**Error signIn => error: ${e.toString()}");
+      log("**Error signIn => error: ${e.toString()}");
       return null;
     }
   }
@@ -27,7 +28,7 @@ class AuthApp {
       await GoogleSignIn().signOut();
       // storage.box.erase();
     } catch (e) {
-      print("**Error signOut => error: ${e.toString()}");
+      log("**Error signOut => error: ${e.toString()}");
     }
   }
 
@@ -36,7 +37,7 @@ class AuthApp {
       await FirebaseAuth.instance.currentUser?.delete();
       await GoogleSignIn().signOut();
     } catch (e) {
-      print("**Error deleteUserAuth => error: ${e.toString()}");
+      log("**Error deleteUserAuth => error: ${e.toString()}");
     }
   }
 }
